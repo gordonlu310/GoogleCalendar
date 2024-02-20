@@ -1,32 +1,36 @@
 package com.gordonlu.googlecalendar;
 
-import com.google.appinventor.components.annotations.*;
+import com.google.appinventor.components.annotations.DesignerComponent;
+import com.google.appinventor.components.annotations.DesignerProperty;
+import com.google.appinventor.components.annotations.SimpleEvent;
+import com.google.appinventor.components.annotations.SimpleFunction;
+import com.google.appinventor.components.annotations.SimpleObject;
+import com.google.appinventor.components.annotations.SimpleProperty;
 import com.google.appinventor.components.common.ComponentCategory;
 import com.google.appinventor.components.runtime.AndroidNonvisibleComponent;
+import com.google.appinventor.components.runtime.util.AsynchUtil;
 import com.google.appinventor.components.runtime.ComponentContainer;
 import com.google.appinventor.components.runtime.EventDispatcher;
-
-import java.io.ByteArrayOutputStream;
-import com.google.appinventor.components.runtime.util.AsynchUtil;
-import java.io.BufferedReader;
-import java.lang.StringBuilder;
-import java.io.InputStreamReader;
-import java.net.URL;
-import java.io.IOException;
-import java.net.URLEncoder;
-import java.nio.charset.StandardCharsets;
-
-import androidx.core.graphics.ColorUtils;
-import android.graphics.Color;
-import java.lang.Integer;
-import java.util.concurrent.TimeUnit;
-import java.util.Calendar;
+import com.google.appinventor.components.runtime.util.CsvUtil;
 import com.google.appinventor.components.runtime.util.Dates;
 import com.google.appinventor.components.runtime.util.YailList;
-import com.google.appinventor.components.runtime.util.CsvUtil;
 
-@DesignerComponent(version = 1, description = "An extension that allows you to manage your Google Calendars in App Inventor. Created by Gordon.",
- iconName = "aiwebres/calendar.png", category = ComponentCategory.EXTENSION, nonVisible = true)
+import android.graphics.Color;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.lang.Integer;
+import java.lang.StringBuilder;
+import java.net.URL;
+import java.net.URLEncoder;
+import java.util.Calendar;
+
+@DesignerComponent(version = 1,
+        description = "An extension that allows you to manage your Google Calendars in App Inventor. Created by Gordon Lu.",
+        iconName = "aiwebres/calendar.png",
+        category = ComponentCategory.EXTENSION,
+        nonVisible = true)
 @SimpleObject(external = true)
 
 public class GoogleCalendar extends AndroidNonvisibleComponent {
